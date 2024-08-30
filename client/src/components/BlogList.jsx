@@ -10,7 +10,7 @@ const BlogList = ({ selectedTags }) => {
     async function fetchData() {
       try {
         const response = await axios.get(
-          "http://dev-io-exl4.onrender.com/api/blogs"
+          "https://dev-io-exl4.onrender.com/api/blogs"
         );
         setBlogs(response.data);
       } catch (err) {

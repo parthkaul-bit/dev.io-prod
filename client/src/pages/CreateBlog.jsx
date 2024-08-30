@@ -56,7 +56,7 @@ const CreateBlog = () => {
         },
       };
       await axios.post(
-        "http://dev-io-exl4.onrender.com/api/blogs/",
+        "https://dev-io-exl4.onrender.com/api/blogs/",
         blogData,
         config
       );

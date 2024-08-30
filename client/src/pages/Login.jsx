@@ -32,7 +32,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://dev-io-exl4.onrender.com/api/auth/login",
+        "https://dev-io-exl4.onrender.com/api/auth/login",
         { email, password }
       );
       localStorage.setItem("token", response.data.token);

@@ -23,7 +23,7 @@ function BlogDetail() {
   const fetchComments = async (blogId) => {
     try {
       const { data } = await axios.get(
-        "http://dev-io-exl4.onrender.com/api/comments/",
+        "https://dev-io-exl4.onrender.com/api/comments/",
         {
           params: { blog_id: blogId },
         }

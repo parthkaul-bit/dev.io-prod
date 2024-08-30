@@ -17,7 +17,7 @@ const Favorites = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://dev-io-exl4.onrender.com/api/likes/user/${user._id}`, // Ensure correct endpoint
+          `https://dev-io-exl4.onrender.com/api/likes/user/${user._id}`, // Ensure correct endpoint
           {
             headers: {
               Authorization: `Bearer ${token}`,

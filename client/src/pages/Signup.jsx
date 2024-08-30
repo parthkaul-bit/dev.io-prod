@@ -59,7 +59,7 @@ export default function Signup() {
 
     try {
       const response = await axios.post(
-        "http://dev-io-exl4.onrender.com/api/auth/signup/",
+        "https://dev-io-exl4.onrender.com/api/auth/signup/",
         {
           username,
           email,
@@ -69,7 +69,7 @@ export default function Signup() {
 
       // Login the user immediately after signup
       const loginResponse = await axios.post(
-        "http://dev-io-exl4.onrender.com/api/auth/login/",
+        "https://dev-io-exl4.onrender.com/api/auth/login/",
         {
           email,
           password,

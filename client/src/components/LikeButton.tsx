@@ -12,7 +12,7 @@ const LikeButton = ({ blogId, userId }) => {
     const fetchLikes = async () => {
       try {
         const { data } = await axios.get(
-          `http://dev-io-exl4.onrender.com/api/likes/${blogId}`
+          `https://dev-io-exl4.onrender.com/api/likes/${blogId}`
         );
         setLikesCount(data.likes.length);
       } catch (error) {
