@@ -26,7 +26,7 @@ const LikeButton = ({ blogId, userId }) => {
     const checkLikeStatus = async () => {
       try {
         const { data } = await axios.get(
-          `http://dev-io-exl4.onrender.com/api/likes/status`,
+          `https://dev-io-exl4.onrender.com/api/likes/status`,
           {
             params: { blog_id: blogId, user_id: userId },
           }
