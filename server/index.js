@@ -17,7 +17,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://dev-io-exl4.onrender.com", // Replace with your frontend's Render URL
+    origin: "https://dev-io-fe.onrender.com", // Replace with your frontend's Render URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
