@@ -15,9 +15,16 @@ const likeRoutes = require("./route/likeRoute");
 const app = express();
 
 // Middleware
+app.use((req, res, next) => {
+  if (req.secure) {
+    return next();
+  }
+  res.redirect(`https://${req.headers.host}${req.url}`);
+});
+
 app.use(
   cors({
-    origin: "https://dev-io-fe.onrender.com", // Replace with your frontend's Render URL
+    origin: "https://dev-io-fe.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
