@@ -15,16 +15,16 @@ const likeRoutes = require("./route/likeRoute");
 const app = express();
 
 // Middleware
-app.use((req, res, next) => {
-  if (req.secure) {
-    return next();
-  }
-  res.redirect(`https://${req.headers.host}${req.url}`);
-});
+// app.use((req, res, next) => {
+//   if (req.secure) {
+//     return next();
+//   }
+//   res.redirect(`https://${req.headers.host}${req.url}`);
+// });
 
 app.use(
   cors({
-    origin: "https://dev-io-fe.onrender.com",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
