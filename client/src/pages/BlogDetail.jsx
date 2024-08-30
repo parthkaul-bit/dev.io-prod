@@ -22,9 +22,12 @@ function BlogDetail() {
 
   const fetchComments = async (blogId) => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/comments/", {
-        params: { blog_id: blogId },
-      });
+      const { data } = await axios.get(
+        "http://dev-io-exl4.onrender.com/api/comments/",
+        {
+          params: { blog_id: blogId },
+        }
+      );
       if (Array.isArray(data)) {
         setComments(data);
       } else {

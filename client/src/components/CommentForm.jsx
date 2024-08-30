@@ -8,7 +8,7 @@ const CommentForm = ({ blogId, userId, onCommentAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/comments/", {
+      await axios.post("http://dev-io-exl4.onrender.com/api/comments/", {
         blog_id: blogId,
         comment,
         user_id: userId,

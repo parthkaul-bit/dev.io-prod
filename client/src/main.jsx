@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import App from "./App"; // Adjust the import according to your file structure
+import App from "./App";
 
 const THEME = createTheme({
   palette: {
@@ -33,7 +33,7 @@ const THEME = createTheme({
 
 createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={THEME}>
-    <CssBaseline /> {/* Apply MUI's baseline CSS */}
+    <CssBaseline />
     <App />
   </ThemeProvider>
 );

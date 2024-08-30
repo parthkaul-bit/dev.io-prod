@@ -9,7 +9,9 @@ const BlogList = ({ selectedTags }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:8080/api/blogs");
+        const response = await axios.get(
+          "http://dev-io-exl4.onrender.com/api/blogs"
+        );
         setBlogs(response.data);
       } catch (err) {
         console.log(err);

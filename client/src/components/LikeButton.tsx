@@ -12,7 +12,7 @@ const LikeButton = ({ blogId, userId }) => {
     const fetchLikes = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8080/api/likes/${blogId}`
+          `http://dev-io-exl4.onrender.com/api/likes/${blogId}`
         );
         setLikesCount(data.likes.length);
       } catch (error) {
@@ -26,7 +26,7 @@ const LikeButton = ({ blogId, userId }) => {
     const checkLikeStatus = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8080/api/likes/status`,
+          `http://dev-io-exl4.onrender.com/api/likes/status`,
           {
             params: { blog_id: blogId, user_id: userId },
           }
@@ -49,11 +49,14 @@ const LikeButton = ({ blogId, userId }) => {
       };
 
       if (liked) {
-        await axios.delete(`http://localhost:8080/api/likes/`, requestConfig);
+        await axios.delete(
+          `http://dev-io-exl4.onrender.com/api/likes/`,
+          requestConfig
+        );
         setLikesCount((prev) => prev - 1);
       } else {
         await axios.post(
-          `http://localhost:8080/api/likes/`,
+          `http://dev-io-exl4.onrender.com/api/likes/`,
           { blog_id: blogId, user_id: userId },
           requestConfig
         );

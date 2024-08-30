@@ -10,7 +10,7 @@ const TagFilters = ({ onTagChange }) => {
     async function fetchTags() {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/blogs/tags"
+          "http://dev-io-exl4.onrender.com/api/blogs/tags"
         );
         setTags(response.data);
       } catch (err) {

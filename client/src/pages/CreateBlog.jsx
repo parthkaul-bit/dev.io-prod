@@ -55,7 +55,11 @@ const CreateBlog = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       };
-      await axios.post("http://localhost:8080/api/blogs/", blogData, config);
+      await axios.post(
+        "http://dev-io-exl4.onrender.com/api/blogs/",
+        blogData,
+        config
+      );
       navigate("/");
     } catch (err) {
       setError(err.response.data.message || "An error occurred");
