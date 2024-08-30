@@ -50,13 +50,13 @@ const LikeButton = ({ blogId, userId }) => {
 
       if (liked) {
         await axios.delete(
-          `http://dev-io-exl4.onrender.com/api/likes/`,
+          `https://dev-io-exl4.onrender.com/api/likes/`,
           requestConfig
         );
         setLikesCount((prev) => prev - 1);
       } else {
         await axios.post(
-          `http://dev-io-exl4.onrender.com/api/likes/`,
+          `https://dev-io-exl4.onrender.com/api/likes/`,
           { blog_id: blogId, user_id: userId },
           requestConfig
         );
