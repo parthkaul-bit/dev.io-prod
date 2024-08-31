@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Paper, Typography, Button, Grid, Box, Avatar } from "@mui/material";
+import { Paper, Typography, Button, Grid, Box, Avatar, CircularProgress, Container } from "@mui/material";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BlogList = ({ selectedTags }) => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     async function fetchData() {
@@ -15,10 +16,28 @@ const BlogList = ({ selectedTags }) => {
         setBlogs(response.data);
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false); 
       }
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <Container
+        maxWidth="md"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "80vh",
+        }}
+      >
+        <CircularProgress />
+      </Container>
+    );
+  }
 
   // Filter blogs based on selected tags
   const filteredBlogs = blogs.filter((blog) =>
